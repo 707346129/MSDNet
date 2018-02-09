@@ -13,12 +13,16 @@ require 'nn'
 require 'sys'
 require 'paths'
 
+print "aa"
+
 local save2txt = require 'saveTXT'
 local DataLoader = require 'dataloader'
 local models = require 'models/init'
 local Trainer = require 'train_joint'
 local opts = require 'opts'
 local checkpoints = require 'checkpoints'
+
+print "bb"
 
 torch.setdefaulttensortype('torch.FloatTensor')
 torch.setnumthreads(1)
@@ -27,6 +31,7 @@ local opt = opts.parse(arg)
 torch.manualSeed(opt.manualSeed)
 cutorch.manualSeedAll(opt.manualSeed)
 
+print("cc")
 -- Load previous checkpoint, if it exists
 local checkpoint, optimState = checkpoints.latest(opt)
 
